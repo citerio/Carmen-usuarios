@@ -1,0 +1,74 @@
+<ion-header no-border>
+    <ion-toolbar [class.show-background]="showToolbar" translucent>
+        <ion-buttons slot="start">
+            <ion-icon name="arrow-back" color="dark" style="float:left;left: 0;font-size: 22px;" (click)="closeModal()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+    <div  mode="ios">
+        <img src="{{item.img}}" alt="Portada" style="width: 100%;" *ngIf="item.img">
+        <ion-card-header>
+        <ion-card-title style="font-size: 18px; font-family: 'SF Pro Display';font-weight: 400;">
+            {{item.name}}
+        </ion-card-title>
+        <ion-card-subtitle style="color: rgb(53, 53, 53);">
+            {{item.description}}
+        </ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-item>
+            <ion-label><span style="font-size: 16px;font-family: 'SF Pro Display';font-weight: 500;color:green;">Total: {{cart_total | currency}}</span></ion-label>
+        </ion-item>
+    </div>
+
+    <ion-list>
+        <ion-list-header *ngIf="item.s_price && item.m_price && item.l_price">
+            {{ text.item_size_heading }}
+        </ion-list-header>
+        <ion-radio-group>
+            <ion-item *ngIf="item.s_price > 0 && item.m_price && item.l_price">
+                <ion-label>{{ text.item_small }} <span style="float: right">{{ currency }}{{ item.s_price }}</span></ion-label>
+                <ion-radio slot="start" color="primary" value="s" (ionSelect)="selectItem(1,item.s_price)" checked="true"></ion-radio>
+            </ion-item>
+
+            <ion-item *ngIf="item.m_price > 0">
+                <ion-label>{{ text.item_m }} <span style="float: right">{{ currency }}{{ item.m_price }}</span></ion-label>
+                <ion-radio slot="start" color="primary" value="m" (ionSelect)="selectItem(2,item.m_price)"></ion-radio>
+            </ion-item>
+
+            <ion-item *ngIf="item.l_price > 0">
+                <ion-label>{{ text.item_large }} <span style="float: right">{{ currency }}{{ item.l_price }}</span></ion-label>
+                <ion-radio slot="start" color="primary" value="l" (ionSelect)="selectItem(3,item.l_price)"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+
+    <ion-list *ngIf="item.addon.length > 0">
+        <ion-list-header>
+            {{ text.item_addon_heading }}
+        </ion-list-header>
+
+        <ion-item *ngFor="let addon of item.addon">
+            <ion-label>{{ addon.name }} <span style="float: right">{{ currency }}{{ addon.price }}</span></ion-label>
+            <ion-checkbox color="primary" slot="start" (ionChange)="addonSelect(addon)"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <div class="quantitybtn" style="text-align: center;padding: 12px 0;">
+        <button type="button" class="sign plus" data-quantity="plus" data-field="quantity" *ngIf="qty >= 2" (click)="Qty('rest')"> - </button>
+        <input class="quantityinput" type="text" name="qty" value="{{ qty }}" readonly="readonly">
+        <button type="button" class="sign minus" data-quantity="minus" data-field="quantity" (click)="Qty('sum')">+</button>
+    </div>
+    <div class="footer-line"></div>
+</ion-content>
+
+
+ 
+<ion-footer padding style="border:1px solid #e6e6e6;background-color: #ffffff;">
+    <button class="addToCartBtn" (click)="addToCart()">
+        <!-- [disabled]="!itemID" -->
+        {{ text.item_addon_button }} x{{ qty }} al carrito: {{itemPrice | currency}}
+    </button>
+</ion-footer>

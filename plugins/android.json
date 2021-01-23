@@ -1,0 +1,61 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.paypal.cordova.mobilesdk": {
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "2832239710337833",
+      "APP_NAME": "Carmen App",
+      "FACEBOOK_HYBRID_APP_EVENTS": "false",
+      "FACEBOOK_ANDROID_SDK_VERSION": "5.13.0",
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-googleplus": {
+      "PLAY_SERVICES_VERSION": "15.0.1",
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-nativegeocoder": {
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-stripe": {
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.carmen.app"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.carmen.app"
+    }
+  },
+  "dependent_plugins": {
+    "card.io.cordova.mobilesdk": {
+      "PACKAGE_NAME": "com.carmen.app"
+    }
+  }
+}
