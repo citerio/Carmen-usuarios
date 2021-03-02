@@ -40,15 +40,7 @@ export class CategorysPage implements OnInit {
   
   ionViewWillEnter()
   {   
-    if (!localStorage.getItem('user_id')) {
-      this.nav.navigateRoot('/welcome');
-    }else {
-
-      if(localStorage.getItem('user_id') == 'null')
-      {
-        this.nav.navigateRoot('/welcome');
-      }
-    }
+   
     if(localStorage.getItem('app_text'))
     {
       this.text = JSON.parse(localStorage.getItem('app_text'));

@@ -168,7 +168,7 @@ export class AppComponent {
     }
     else
     {
-      this.nav.navigateRoot('/welcome');
+      this.nav.navigateRoot('/city');
     }
 
 

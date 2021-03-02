@@ -134,15 +134,16 @@ export class HomePage {
      
     });
 
-    if (!localStorage.getItem('user_id')) {
-      this.nav.navigateRoot('/welcome');
-    }else {
+    // if (!localStorage.getItem('user_id')) {
+    //   this.nav.navigateRoot('/welcome');
+    // }else {
 
-      if(localStorage.getItem('user_id') == 'null')
-      {
-        this.nav.navigateRoot('/welcome');
-      }
-    }
+    //   if(localStorage.getItem('user_id') == 'null')
+    //   {
+    //     this.nav.navigateRoot('/welcome');
+    //   }
+    // }
+
     if(localStorage.getItem('app_text'))
     {
       this.text = JSON.parse(localStorage.getItem('app_text'));
@@ -241,8 +242,8 @@ export class HomePage {
           this.presentToast("Te recomendamos cambiar tu contraseña","danger");
         }
       }else {
-        localStorage.removeItem('user_id');
-        this.nav.navigateBack('/welcome')
+        // localStorage.removeItem('user_id');
+        // this.nav.navigateBack('/welcome')
       }
     });
   }

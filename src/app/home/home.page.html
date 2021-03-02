@@ -320,33 +320,33 @@
 </ion-content>
 
 <ion-footer *ngIf="text && isKeyboardHide">
-<ion-toolbar mode="ios">
+  <ion-toolbar mode="ios">
 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    
-   <ion-tab-button (click)="loadData(city_id + '?ss=ss')">
-      <ion-icon name="home"></ion-icon>
-      <ion-label>{{ text.home_footer_name }}</ion-label>
-    </ion-tab-button>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      
+    <ion-tab-button (click)="loadData(city_id + '?ss=ss')">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>{{ text.home_footer_name }}</ion-label>
+      </ion-tab-button>
 
-    <ion-tab-button (click)="nearBy()">
-      <ion-icon name="pin"></ion-icon>
-      <ion-label>{{ text.home_nearest }}</ion-label>
-    </ion-tab-button>
+      <ion-tab-button (click)="nearBy()">
+        <ion-icon name="pin"></ion-icon>
+        <ion-label>{{ text.home_nearest }}</ion-label>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/cart" routerDirection="forward">
-      <ion-icon name="basket"></ion-icon>
-      <ion-label>{{ text.home_cart }}</ion-label>
-      <ion-badge *ngIf="count > 0">{{ count }}</ion-badge>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/cart" routerDirection="forward">
+        <ion-icon name="basket"></ion-icon>
+        <ion-label>{{ text.home_cart }}</ion-label>
+        <ion-badge *ngIf="count > 0">{{ count }}</ion-badge>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/profile" routerDirection="forward">
-      <ion-icon name="person"></ion-icon>
-      <ion-label>{{ text.home_profile }}</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+      <ion-tab-button routerLink="/profile" routerDirection="forward">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>{{ text.home_profile }}</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 
-</ion-toolbar>
+  </ion-toolbar>
 </ion-footer>
